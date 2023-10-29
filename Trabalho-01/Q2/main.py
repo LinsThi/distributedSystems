@@ -9,9 +9,9 @@ def main():
     file_input_stream = PessoaInputFileStream();
 
     # Criando as 3 opções de print de pessoas
-    print_stream = PessoaPrintStream();
-    file_stream = PessoaFileStream();
-    tcp_stream = PessoaTCPStream();
+    output_print_stream = PessoaOutputPrintStream();
+    output_file_stream = PessoaOutputFileStream();
+    output_tcp_stream = PessoaOutputTCPStream();
 
 
     # Criando objeto para leitura
@@ -21,9 +21,9 @@ def main():
     pessoa_input_stream.read_system()
 
     # Criando objeto para escrita
-    pessoa_output_stream = PessoaOutputStream(pessoa_input_stream.people, print_stream)
-    # pessoa_output_stream = PessoaOutputStream(pessoa_input_stream.people, file_stream)
-    # pessoa_output_stream = PessoaOutputStream(pessoa_input_stream.people, tcp_stream)
+    pessoa_output_stream = PessoaOutputStream(pessoa_input_stream.people, output_print_stream)
+    # pessoa_output_stream = PessoaOutputStream(pessoa_input_stream.people, output_file_stream)
+    # pessoa_output_stream = PessoaOutputStream(pessoa_input_stream.people, output_tcp_stream)
     pessoa_output_stream.write_system();
 
 if __name__ == "__main__":

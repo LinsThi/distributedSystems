@@ -5,7 +5,7 @@ class OutputStream (io.IOBase):
    def write(self, title, people):
      pass
 
-class PessoaPrintStream (OutputStream):
+class PessoaOutputPrintStream (OutputStream):
    def write(self, title, people):
       print(title)
 
@@ -18,7 +18,7 @@ class PessoaPrintStream (OutputStream):
 
         print(f'Nome: {person.name} ({name_bytes} Bytes), CPF: {person.cpf} ({cpf_bytes} Bytes), Idade: {person.age} ({age_bytes} Bytes), Total de bytes utilizados: {total_bytes}')
    
-class PessoaFileStream (OutputStream):
+class PessoaOutputFileStream (OutputStream):
    def write(self, title, people):
       file = open('Q1/result/peoples_q1.txt', 'w')
       string_out = title
@@ -35,7 +35,7 @@ class PessoaFileStream (OutputStream):
       file.write(string_out)
       file.close()
    
-class PessoaTCPStream (OutputStream):
+class PessoaOutputTCPStream (OutputStream):
    def write(self, title, people):
       message = title
       
