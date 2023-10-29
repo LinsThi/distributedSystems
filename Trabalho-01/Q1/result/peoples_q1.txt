@@ -1,0 +1,4 @@
+Quantidade de pessoas: 2
+
+Nome: Marcos (6 Bytes), CPF: 123456789 (9 Bytes), Idade: 30 (2 Bytes), Total de bytes utilizados: 17
+Nome: Judite (6 Bytes), CPF: 123456789 (9 Bytes), Idade: 23 (2 Bytes), Total de bytes utilizados: 17

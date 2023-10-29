@@ -16,7 +16,7 @@ class PessoaInputConsoleStream(InputStream):
 
 class PessoaInputFileStream(InputStream):
   def read(self, people: List[Pessoa], newPerson=None):
-    with open('Q1/input/peoples_q1.txt', 'r') as file:
+    with open('Q2/input/peoples_q2.txt', 'r') as file:
       for line in file:
         line = line.strip()
         arraySplited = line.split(',')

@@ -1,6 +1,6 @@
 import io
 from typing import List
-from Q1.entities.InputStream import InputStream
+from Q2.entities.InputStream import InputStream
 
 
 class PessoaInputStream(io.IOBase):
