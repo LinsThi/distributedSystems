@@ -7,7 +7,7 @@ from Q2.entities.InputStream import *
 
 tcp_input_stream = PessoaInputTCPStream()
 pessoa_input_stream = PessoaInputStream([], tcp_input_stream)
-print_stream = PessoaPrintStream();
+print_stream = PessoaInputConsoleStream();
 pessoa_output_stream = PessoaOutputStream(pessoa_input_stream.people, print_stream)
 
 def server():

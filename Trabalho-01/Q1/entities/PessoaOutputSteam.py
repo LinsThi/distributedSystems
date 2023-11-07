@@ -10,4 +10,5 @@ class PessoaOutputStream(io.IOBase):
     def write_system(self):
         lengthPeople = len(self.people)
         title = f'Quantidade de pessoas: {lengthPeople}\n\n'
-        self.os_.write(title, self.people)
+        message = self.os_.write(title, self.people)
+        return message

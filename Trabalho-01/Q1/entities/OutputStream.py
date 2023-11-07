@@ -16,7 +16,10 @@ class PessoaOutputPrintStream (OutputStream):
 
         total_bytes = name_bytes + cpf_bytes + age_bytes
 
-        print(f'Nome: {person.name} ({name_bytes} Bytes), CPF: {person.cpf} ({cpf_bytes} Bytes), Idade: {person.age} ({age_bytes} Bytes), Total de bytes utilizados: {total_bytes}')
+        message = f'Nome: {person.name} ({name_bytes} Bytes), CPF: {person.cpf} ({cpf_bytes} Bytes), Idade: {person.age} ({age_bytes} Bytes), Total de bytes utilizados: {total_bytes}'
+
+        print(message)
+        return message
    
 class PessoaOutputFileStream (OutputStream):
    def write(self, title, people):
@@ -34,6 +37,7 @@ class PessoaOutputFileStream (OutputStream):
 
       file.write(string_out)
       file.close()
+      return string_out
    
 class PessoaOutputTCPStream (OutputStream):
    def write(self, title, people):

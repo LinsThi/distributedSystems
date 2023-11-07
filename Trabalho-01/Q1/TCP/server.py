@@ -1,17 +1,15 @@
 import socket, threading
 
+from Q1.entities.Pessoa import Pessoa
 from Q1.entities.PessoaOutputSteam import PessoaOutputStream
-from Q1.entities.PessoaInputStream import PessoaInputStream
 from Q1.entities.OutputStream import *
-from Q1.entities.InputStream import *
 
-tcp_input_stream = PessoaInputTCPStream()
-pessoa_input_stream = PessoaInputStream([], tcp_input_stream)
-print_stream = PessoaPrintStream();
-pessoa_output_stream = PessoaOutputStream(pessoa_input_stream.people, print_stream)
+output_print_stream = PessoaOutputPrintStream();
+people_list = [Pessoa('Marcos', 123456789, 30), Pessoa('Judite', 123456789, 23) ]
+pessoa_output_stream = PessoaOutputStream(people_list, output_print_stream)
 
 def server():
-    server_host = "192.168.0.2"
+    server_host = "192.168.0.8"
     server_port = 7896
     
     try:
@@ -36,9 +34,8 @@ class Connection(threading.Thread):
     
     def run(self):
         try:
-            data = self.client_socket.recv(1024).decode('utf-8')
-            pessoa_input_stream.read_system(str(data))
-            self.client_socket.send(pessoa_output_stream.write_system())
+            message = pessoa_output_stream.write_system()
+            self.client_socket.send(message.encode('utf-8'))
         except Exception as e:
             print("Error:", str(e))
         finally:
