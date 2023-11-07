@@ -1,0 +1,42 @@
+{
+  "candidates": [
+    {
+      "number": 1,
+      "name": "Candidato 1",
+      "nvotes": 4
+    },
+    {
+      "number": 2,
+      "name": "Candidato 2",
+      "nvotes": 1
+    },
+    {
+      "number": 3,
+      "name": "Candidato 3",
+      "nvotes": 0
+    }
+  ],
+  "users": [
+    {
+      "user": "antonio",
+      "pass": "123",
+      "name": "Antonio Luz",
+      "isAlreadyVote": true,
+      "isAdmin": false
+    },
+    {
+      "user": "maria",
+      "pass": "123",
+      "name": "Maria Cristina",
+      "isAlreadyVote": false,
+      "isAdmin": false
+    },
+    {
+      "user": "admin",
+      "pass": "123",
+      "name": "Admin",
+      "isAlreadyVote": false,
+      "isAdmin": true
+    }
+  ]
+}
