@@ -9,6 +9,8 @@ class PessoaOutputPrintStream (OutputStream):
    def write(self, title, people):
       print(title)
 
+      message = ''
+
       for person in people:
         name_bytes = len(person.name.encode('utf-8'))
         cpf_bytes = len(str(person.cpf).encode('utf-8'))
@@ -16,10 +18,10 @@ class PessoaOutputPrintStream (OutputStream):
 
         total_bytes = name_bytes + cpf_bytes + age_bytes
 
-        message = f'Nome: {person.name} ({name_bytes} Bytes), CPF: {person.cpf} ({cpf_bytes} Bytes), Idade: {person.age} ({age_bytes} Bytes), Total de bytes utilizados: {total_bytes}'
+        message += f'Nome: {person.name} ({name_bytes} Bytes), CPF: {person.cpf} ({cpf_bytes} Bytes), Idade: {person.age} ({age_bytes} Bytes), Total de bytes utilizados: {total_bytes}\n'
 
-        print(message)
-        return message
+      print(message)
+      return message
    
 class PessoaOutputFileStream (OutputStream):
    def write(self, title, people):
