@@ -1,0 +1,23 @@
+{
+  "name": "Compania Santa Luzia",
+  "vehicles": [
+    {
+      "model": "Bus",
+      "capacity": "15",
+      "fuelEfficiency": "100",
+      "passengerCount": "10"
+    },
+    {
+      "model": "Car",
+      "capacity": "15",
+      "fuelEfficiency": "100",
+      "trunkSpace": 7
+    },
+    {
+      "model": "Motorcycle",
+      "capacity": "15",
+      "fuelEfficiency": "100",
+      "hasSidecar": true
+    }
+  ]
+}
